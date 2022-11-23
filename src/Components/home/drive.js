@@ -4,7 +4,7 @@ import tesla from "../../assets/tesla.jpg";
 import subaru from "../../assets/subaro.jpg";
 import porsche from "../../assets/porsche.jpg";
 import BMW from "../../assets/BMW.jpg";
-import { DisplayCards } from "../cards/cards";
+import { DisplayCards } from "../cards/carcards";
 
 
 export function Drive() {

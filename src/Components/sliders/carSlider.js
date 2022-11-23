@@ -1,5 +1,5 @@
 import "../../App.css";
-import { DisplayCards } from "../cards/cards";
+import { DisplayCards } from "../cards/carcards";
 import BMW from "../../assets/BMW.jpg";
 import Jeep from "../../assets/jeep.jpg";
 import Porsche from "../../assets/porsche.jpg"
@@ -10,8 +10,6 @@ import Toyota from "../../assets/toyota.jpg"
 import Nissan from "../../assets/nissan.jpg"
 import Lamborgini from "../../assets/lamborghini.jpg"
 import ford from "../../assets/ford.jpg"
-
-
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -78,16 +76,6 @@ export function Slides() {
                   {" "}
                   <DisplayCards img={ford} title="Ford" />{" "}
                 </SwiperSlide>
-             
-
-                {/* <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide> */}
               </Swiper>
             </div>
           </div>

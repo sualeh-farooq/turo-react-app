@@ -262,6 +262,61 @@ body {
   display: none !important;
 }
 
+.outCard {
+  display: flex !important;
+  border: 2px solid black;
+  flex-direction: row !important;
+  justify-content: space-between;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.outcard-pic-space {
+  flex: 1;
+}
+.outcard-det {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+.outcard-det>h2 {
+  font-weight: bold !important;
+}
+
+.outcard-det>h2>span {
+  color: #4e30f6;
+}
+.outcard-det>p {
+  font-weight: 400;
+  color: black;
+  font-size: medium;
+}
+.brows-car {
+  background-color: #4e30f6 !important;
+  width: max-content !important;
+  padding: 10px !important;
+  border-radius: 0% !important;
+  font-size: large !important;
+  font-weight: 500 !important;
+}
+
+.brows-car:hover {
+  background-color: #3418d0 !important;
+
+}
+
+
+.outcard-pic {
+  width: 80%;
+  margin: 2%;
+}
+
+
+
+
 
 @media only screen and (max-width: 768px) {
   .noti {
