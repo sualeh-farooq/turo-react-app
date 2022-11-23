@@ -55,8 +55,12 @@ font-weight: 500;
 }
 
 
+.noti>p>a {
+  color: black;
+}
 
-.noti>p:hover {
+
+.noti>p>a:hover {
   color: #575656;
   cursor: pointer;
   font-weight: 500;
