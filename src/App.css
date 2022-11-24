@@ -510,6 +510,9 @@ flex: 1;
 
 
 
+.faqSpace {
+  margin: 10px  !important;
+}
 
 @media only screen and (max-width: 768px) {
   .carsCard {
