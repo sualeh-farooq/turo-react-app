@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 import { Outcard } from "../cards/outCard";
 
+
 export function Outslide() {
   return (
     <>

@@ -8,8 +8,7 @@ export function DisplayCityCard({img , title , onClick }) {
           <Card className="cityCard" style={{ width: "10rem" }}>
             <Card.Img className="cityImage" variant="top" src={img} />
             <Card.Body>
-              <Card.Title>{title}</Card.Title>
-
+              <Card.Title className="citytitle" >{title}</Card.Title>
             </Card.Body>
           </Card>
         

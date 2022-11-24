@@ -3,7 +3,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-import logo from "../../assets/logow.png";
+import logo from "../../assets/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCar } from "react-icons/ai";
 import { GiHouseKeys } from "react-icons/gi";

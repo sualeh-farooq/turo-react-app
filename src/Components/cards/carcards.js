@@ -6,8 +6,8 @@ export function DisplayCards({img , title}) {
       <>
           <Card className="carsCard" style={{ width: "13rem" }}>
             <Card.Img variant="top" src={img} />
-            <Card.Body>
-              <Card.Title>{title}</Card.Title>
+            <Card.Body className="card-body" >
+              <Card.Title className="cartitle" >{title}</Card.Title>
             </Card.Body>
           </Card>
         

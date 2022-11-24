@@ -23,42 +23,42 @@ import { DisplayCityCard } from "../cards/citycard";
 
 export function CitySlides() {
 
-  const handleOver1 = (event, param) => {
+  const handleOver1 = (event) => {
     event.target.src = losAngOver;
   };
 
   const handleOut1 = (event) => {
     event.target.src = losAng;
   };
-  const handleOver2 = (event, param) => {
+  const handleOver2 = (event) => {
     event.target.src = miamOver;
   };
 
   const handleOut2 = (event) => {
     event.target.src = miami;
   };
-  const handleOver3 = (event, param) => {
+  const handleOver3 = (event) => {
     event.target.src = honoluluPver;
   };
 
   const handleOut3= (event) => {
     event.target.src = honolulu;
   };
-  const handleOver4 = (event, param) => {
+  const handleOver4 = (event) => {
       event.target.src = denOver;
     };
     
     const handleOut4= (event) => {
       event.target.src = den;
   };
-  const handleOver5 = (event, param) => {
+  const handleOver5 = (event) => {
     event.target.src = londonOver;
   };
 
   const handleOut5= (event) => {
     event.target.src = london;
   };
-  const handleOver6 = (event, param) => {
+  const handleOver6 = (event) => {
     event.target.src = torontoOver;
   };
 

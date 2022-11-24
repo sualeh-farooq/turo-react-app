@@ -10,8 +10,18 @@ import { Noti } from "./Components/navbar/noti";
 import { Drive } from "./Components/home/drive";
 import { Slides } from "./Components/sliders/carSlider";
 import { Outcard } from "./Components/cards/outCard";
-import { Outslide } from "./Components/sliders/outdoor"; 
+import { Outslide } from "./Components/sliders/outdoor";
 import { CitySlides } from "./Components/sliders/cityslides";
+import { Dreams } from "./Components/home/fuel";
+import { Travel } from "./Components/sliders/travel";
+import { Meet } from "./Components/home/meet";
+import { Hostcard } from "./Components/cards/hostCard";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
+import { HostSlide } from "./Components/sliders/host";
+import { Book } from "./Components/sliders/book";
+import { FAQ } from "./Components/home/faq";
+import { Accord, Accordion } from "./Components/FAQ/faq";
+import { FaqSlide } from "./Components/sliders/questions";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,16 +32,38 @@ root.render(
       <UncontrolledExample />
       <Drive />
       <Slides />
-       <br />
-       <br />
-<Outslide />
-<br />
-       <br /><br />
-       <br />
-       <CitySlides />
-      {/* <Outcard /> */}
+      <br />
+      <br />
+      <Outslide />
+      <br />
+      <br />
+      <br />
+      <br />
+      <CitySlides />
+      <br />
+      <Dreams />
+      <br />
+      <Travel />
+      <br />
+  <Meet />
+  <br />
 
-      
+  <br />
+  <br />
+  <br />
+  <HostSlide />
+  <br />
+  <br />
+  <br />
+
+  <Book />
+  <br />
+  <br />
+  <FAQ />
+  <br />
+  <br />
+  <br />
+  <FaqSlide />
     </>
   </React.StrictMode>
 );

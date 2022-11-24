@@ -1,57 +1,15 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
- */
-
 .noti {
-background-color: #f4f4f4;
-/* margin-top: -20px; */
-text-align: center;
-padding: 10px;
-font-size: large;
-/* font-family: Arial, Helvetica, sans-serif;
-s*/
-font-family: Arial, Helvetica, sans-serif;
-display: flex;
-justify-content: center;
-align-items: center;
-font-weight: 500;
+  background-color: #f4f4f4;
+  /* margin-top: -20px; */
+  text-align: center;
+  padding: 10px;
+  font-size: large;
+
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
 }
 
 
@@ -68,22 +26,22 @@ font-weight: 500;
 
 body {
   padding: 0;
-  margin:  0 ;
+  margin: 0;
   background-color: rebeccapurple;
 }
 
-.name{
+.name {
   width: auto;
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between;
- 
+
   /* background-color: rebeccapurple; */
 }
 
 .logo {
-  width: 140px !important;
-  height: 105px !important;
+  width: 120px !important;
+  height: 85px !important;
   /* position: absolute; */
   /* background-color: rebeccapurple; */
   /* margin-left: -5%; */
@@ -107,17 +65,17 @@ body {
   background-color: white !important;
   padding: 0% !important;
   /* border: 2px solid black; */
-  height: 4rem  !important;
-  
+  height: 4rem !important;
+
 }
 
 
 
 .hostBtn {
-  background-color: white  !important;
+  background-color: white !important;
   font-size: small !important;
-  border: 1px solid rgb(132, 130, 130)  !important ;
-  border-radius:  0% !important;
+  border: 1px solid rgb(132, 130, 130) !important;
+  border-radius: 0% !important;
   font-weight: 500 !important;
   height: max-content !important;
   padding: 5px !important;
@@ -126,11 +84,13 @@ body {
 .hostBtn:hover {
   cursor: pointer;
   background-color: #d3d3d3 !important;
-  color: #575656  !important;
+  color: #575656 !important;
   border: 1px solid #575656 !important;
 }
 
-.carousel-indicators , .carousel-control-prev , .carousel-control-next-icon{
+.carousel-indicators,
+.carousel-control-prev,
+.carousel-control-next-icon {
   display: none !important;
 }
 
@@ -145,10 +105,50 @@ body {
   margin-top: 10px !important;
 }
 
+.after-city {
+  padding: 50px;
+  /* justify-content: center; */
+  /* border: 2px solid black; */
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px !important;
+}
+
+.after-travel {
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px !important;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.after-travel>span {
+  width: max-content;
+  margin: 0 auto;
+  font-weight: 600;
+}
+
+.after-travel>span>h1 {
+  font-size: 51px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-weight: 800;
+}
+
+
+.after-city>span {
+  /* background-color: red; */
+  width: max-content;
+  margin: 0 auto;
+}
+
 .after-ban>span {
   /* background-color: red; */
   width: max-content;
-  margin:  0 auto;
+  margin: 0 auto;
 }
 
 
@@ -158,24 +158,76 @@ body {
   color: black;
   font-weight: 800;
 }
+.after-city>span>h1 {
+  font-size: 51px;
+  font-family: 'Times New Roman', Times, serif;
+  color: black;
+  font-weight: 800;
+}
+
+.after-city>span>p {
+  font-weight: 400;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .after-ban>span>h2 {
   font-weight: 700;
   color: black;
   display: flex;
-  flex-wrap:  wrap;
+  flex-wrap: wrap;
 }
+
+
+
 .pink {
-  background-color:#b88df5;
+  background-color: #b88df5;
   height: 30px;
   width: 800px;
   margin: 0 auto;
-  outline: none ;
+  outline: none;
   border: none;
   margin-top: -25px;
   position: relative;
   z-index: -1;
+}
 
+.pink2 {
+  background-color: #b88df5;
+  height: 20px;
+  width: 450px;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  margin-top: -65px;
+  position: relative;
+  z-index: -1;
+}
+
+
+.pink3{
+  background-color: #b88df5;
+  height: 20px;
+  width: 350px;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  margin-top: -28px;
+  position: relative;
+  z-index: -1;
+}
+
+.pink4{
+  background-color: #b88df5;
+  height: 20px;
+  width: 650px;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  margin-top: -28px;
+  position: relative;
+  z-index: -1;
 }
 
 
@@ -186,17 +238,18 @@ body {
   justify-content: center;
   padding: 0% !important;
 }
+
 .brows {
   /* border: 2px solid red; */
   /* margin-left: 3%; */
-  margin:  0 auto;
+  margin: 0 auto;
   /* width: max-content; */
   /* margin-left: 17px; */
   text-align: left;
   font-size: x-large;
   font-weight: bold;
   color: black;
-  
+
 }
 
 .cardsgrid {
@@ -209,10 +262,10 @@ body {
   width: 100%;
 }
 
-.cardsgrid>.swiper>.swiper-button-prev ,
+.cardsgrid>.swiper>.swiper-button-prev,
 .cardsgrid>.swiper>.swiper-button-next {
   display: none !important;
-} 
+}
 
 .carsCard {
   margin: 17px !important;
@@ -222,6 +275,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px !important;
 }
+
 .carsCard:hover {
   color: #4829f7;
   cursor: pointer;
@@ -270,10 +324,10 @@ body {
 .outCard {
   display: flex !important;
   /* border: 2px solid black !important; */
-  border:  none !important;
+  border: none !important;
   /* background-color: yellow !important; */
   flex-direction: row !important;
-  justify-content: space-evenly  !important;
+  justify-content: space-evenly !important;
   margin: 10px;
   flex-wrap: wrap;
 }
@@ -286,6 +340,7 @@ body {
   height: max-content;
   justify-content: center;
 }
+
 .outcard-det {
   flex: 1;
   display: flex;
@@ -295,6 +350,7 @@ body {
   flex-wrap: wrap;
   text-align: left;
 }
+
 .outcard-det>h2 {
   font-weight: bold !important;
 }
@@ -302,11 +358,13 @@ body {
 .outcard-det>h2>span {
   color: #4e30f6;
 }
+
 .outcard-det>p {
   font-weight: 400;
   color: black;
   font-size: medium;
 }
+
 .brows-car {
   background-color: #4e30f6 !important;
   width: max-content !important;
@@ -314,6 +372,22 @@ body {
   border-radius: 0% !important;
   font-size: large !important;
   font-weight: 500 !important;
+}
+
+.travelBtn {
+  background-color: #4e30f6 !important;
+  width: max-content !important;
+  padding: 10px !important;
+  border-radius: 0% !important;
+  /* border: 2px solid black !important; */
+  margin:  0 auto !important;
+  font-size: large !important;
+  font-weight: 500 !important;
+}
+
+.travelBtn:hover {
+  background-color: #3418d0 !important;
+
 }
 
 .brows-car:hover {
@@ -338,14 +412,37 @@ body {
   /* border: 2px solid black; */
   width: 100%;
   height: max-content !important;
-  
+
 }
 
+.cardsgrid3 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;  
+}
 
+.cardsgrid4 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;  
+  /* border: 2px solid black ; */
+
+}
+
+.left-faq , .right-faq{
+/* border: 2px solid black ; */
+flex: 1;
+}
+
+.faqModal {
+  margin: 10px !important;
+  border: none !important;
+  outline:  none !important;
+}
 
 .cityImage {
   width: 80% !important;
-  margin:  10px auto !important;
+  margin: 10px auto !important;
 }
 
 .cityCard {
@@ -356,35 +453,211 @@ body {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px !important;
 }
+
 .cityCard:hover {
   color: #4829f7;
   cursor: pointer;
 }
 
+.hostCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 20em !important;
+  /* border: 2px solid black !important; */
+  height: max-content;
+  margin: 10px;
+  background-color: rgb(255, 255, 255) !important;
+  padding: 10px !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
+
+.host-top {
+  display: flex;
+  justify-content: space-between;
+}
+.driver {
+  flex: 1;
+}
+.driver-pic {
+  border-radius: 50%;
+  width: 70%;
+}
+.driver-name {
+  flex: 1;
+  font-size: small;
+  color: black;
+}
+
+.stars>span {
+  /* background-color: white !important;
+   */
+   color: rgb(6, 39, 255) !important;
+}
+
+.bookImg {
+  width: 80% !important;
+  /* border: 2px solid black; */
+}
+
+.accordion-item:first-of-type .accordion-button 
+ {
+  background-color: white !important;
+  color: black !important;
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  .carsCard {
+    width: 50rem !important;
+    height: auto !important;
+  }
+
+  .carsCard>h5 {
+    font-size: small !important;
+    color: wheat !important;
+  }
+
+  .carsCard>.card-img-top {
+    width: 100% !important;
+    position: relative;
+  }
+
+  .carsCard>.card-body {
+    width: 100%;
+  }
+
+  .cartitle {
+    font-size: 10px !important;
+    color: black !important;
+  }
+  .hostCard {
+    width: 10rem;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .noti {
     font-size: small;
   }
+
   .after-ban>span>h1 {
     font-size: 38px;
   }
+
   .after-ban>span>h2 {
     font-size: 16px;
   }
+
+  .after-city>span>h1 {
+    font-size: 25px;
+  }
+  .after-travel>span>h1 {
+    font-size: 25px;
+  }
+
+  .after-city>span>p {
+    font-size: 10px;
+  }
+
   .pink {
     height: 15px;
     width: 400px;
     margin-top: -3%;
-}
-.navbar {
-  height: auto  !important;
+  }
+  .pink2 {
+    height: 15px;
+    width: 220px;
+    margin-top: -9%;
+  }
+  .pink3 {
+    height: 15px;
+    width: 160px;
+    margin-top: -4%;
+  }
+  .pink4 {
+    height: 15px;
+    width: 300px;
+    margin-top: -4%;
+  }
+
+  .navbar {
+    height: auto !important;
+
+  }
+
+  .brows {
+    margin-left: 20%;
+  }
+  .outCard {
+    display: flex !important;
+    /* border: 2px solid black !important; */
+    border: none !important;
+    /* background-color: yellow !important; */
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    margin: 10px;
+    flex-wrap: wrap;
+  }
+  .outcard-pic {
+    width: 40% !important;
+    margin-left: -50%;
+    /* margin: 2% !important; */
+    /* border: 2px solid black; */
+  }
+  .citytitle {
+    font-size: small !important;
+  }
   
+
 }
-.brows {
-  margin-left: 20%;
-}
-  
+
+@media only screen and (max-width: 465px) {
+  .carsCard {
+    width: 50rem !important;
+    height: auto !important;
+  }
+
+  .carsCard>h5 {
+    font-size: small !important;
+    color: wheat !important;
+  }
+
+  .carsCard>.card-img-top {
+    width: 100% !important;
+    position: relative;
+  }
+
+  .carsCard>.card-body {
+    display: none !important;
+  }
+
+  .cartitle {
+    display: none !important;
+  }
+  .outCard {
+    display: flex !important;
+    /* border: 2px solid black !important; */
+    border: none !important;
+    /* background-color: yellow !important; */
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    margin: 10px;
+    flex-wrap: wrap;
+  }
+  .cityCard>.card-body {
+    display: none !important;
+  }
+  .cityCard {
+    width: 20rem !important;
+  }
+  .hostCard {
+    width: 10rem;
+  }
 }
 
 
@@ -392,22 +665,92 @@ body {
   .noti {
     font-size: small;
   }
+
   .after-ban>span>h1 {
     font-size: 38px;
   }
+
   .after-ban>span>h2 {
     font-size: 14px;
   }
+  .after-city>span>h1 {
+    font-size: 25px;
+  }
+  .after-travel>span>h1 {
+    font-size: 25px;
+  }
+
+  .after-city>span>p {
+    font-size: 10px;
+  }
+
   .pink {
     height: 15px;
     width: 350px;
     margin-top: -4%;
-}
-.navbar {
-  height: auto  !important;
-  
-}
-  
+  }
+
+  .pink2 {
+    height: 10px;
+    width: 220px;
+    margin-top: -13%;
+  }
+  .pink3 {
+    height: 15px;
+    width: 160px;
+    margin-top: -5%;
+  }
+  .pink4 {
+    height: 15px;
+    width: 300px;
+    margin-top: -6%;
+  }
+
+
+  .navbar {
+    height: auto !important;
+  }
+
+  .carsCard {
+    width: 20rem !important;
+    height: auto !important;
+    /* background-color: red !important; */
+    padding: 0% !important;
+  }
+
+  .carsCard>h5 {
+    font-size: 5px !important;
+    color: wheat !important;
+  }
+
+  .carsCard>.card-body {
+    display: none !important;
+  }
+
+  .cartitle {
+    font-size: 10px !important;
+    color: white !important;
+  }
+
+  .cityCard {
+    width: 5rem !important;
+  }
+
+
+  .cityCard>.card-body {
+    display: none !important;
+  }
+
+  .outCard {
+    display: flex !important;
+    /* border: 2px solid black !important; */
+    border: none !important;
+    /* background-color: yellow !important; */
+    flex-direction: column !important;
+    justify-content: space-evenly !important;
+    margin: 10px;
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -416,46 +759,74 @@ body {
   .noti {
     font-size: small;
   }
+
   .after-ban>span>h1 {
     font-size: 38px;
   }
+
   .after-ban>span>h2 {
     font-size: 12px;
   }
+  .after-city>span>h1 {
+    font-size: 25px;
+  }
+
+  .after-city>span>p {
+    font-size: 10px;
+  }
+
   .pink {
     height: 15px;
     width: 300px;
     margin-top: -5%;
-}
-.navbar {
-  height: auto  !important;
-  
-}
+  }
+
+  .navbar {
+    height: auto !important;
+
+  }
+  .bookImg {
+    width: 80% ;
+  }
 }
 
 
 
 
 @media only screen and (max-width: 320px) {
+  .bookImg {
+    width: 80% ;
+  }
   .noti {
     font-size: small;
   }
+
   .after-ban>span>h1 {
     font-size: 38px;
   }
+
   .after-ban>span>h2 {
     font-size: 12px;
     z-index: 0;
   }
+  .after-city>span>h1 {
+    font-size: 25px;
+  }
+
+  .after-city>span>p {
+    font-size: 8px;
+    z-index: 0;
+  }
+
   .pink {
     height: 15px;
     width: 300px;
     margin-top: -5%;
-}
+  }
 
-.navbar {
-  height: auto  !important;
-  
-}
+  .navbar {
+    height: auto !important;
+  }
+
 
 }
