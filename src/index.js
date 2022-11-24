@@ -10,6 +10,8 @@ import { Noti } from "./Components/navbar/noti";
 import { Drive } from "./Components/home/drive";
 import { Slides } from "./Components/sliders/carSlider";
 import { Outcard } from "./Components/cards/outCard";
+import { Outslide } from "./Components/sliders/outdoor"; 
+import { CitySlides } from "./Components/sliders/cityslides";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,8 +24,12 @@ root.render(
       <Slides />
        <br />
        <br />
-
-      <Outcard />
+<Outslide />
+<br />
+       <br /><br />
+       <br />
+       <CitySlides />
+      {/* <Outcard /> */}
 
       
     </>

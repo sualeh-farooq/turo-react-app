@@ -44,10 +44,10 @@ background-color: #f4f4f4;
 /* margin-top: -20px; */
 text-align: center;
 padding: 10px;
-font-size: x-large;
+font-size: large;
 /* font-family: Arial, Helvetica, sans-serif;
 s*/
-font-family: 'Times New Roman', Times, serif;
+font-family: Arial, Helvetica, sans-serif;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -209,6 +209,11 @@ body {
   width: 100%;
 }
 
+.cardsgrid>.swiper>.swiper-button-prev ,
+.cardsgrid>.swiper>.swiper-button-next {
+  display: none !important;
+} 
+
 .carsCard {
   margin: 17px !important;
   margin-left: 20px !important;
@@ -264,15 +269,22 @@ body {
 
 .outCard {
   display: flex !important;
-  border: 2px solid black;
+  /* border: 2px solid black !important; */
+  border:  none !important;
+  /* background-color: yellow !important; */
   flex-direction: row !important;
-  justify-content: space-between;
+  justify-content: space-evenly  !important;
   margin: 10px;
   flex-wrap: wrap;
 }
 
 .outcard-pic-space {
   flex: 1;
+  width: max-content;
+  /* border: 2px solid red; */
+  display: flex;
+  height: max-content;
+  justify-content: center;
 }
 .outcard-det {
   flex: 1;
@@ -281,6 +293,7 @@ body {
   justify-content: space-evenly;
   margin: 10px;
   flex-wrap: wrap;
+  text-align: left;
 }
 .outcard-det>h2 {
   font-weight: bold !important;
@@ -310,12 +323,43 @@ body {
 
 
 .outcard-pic {
-  width: 80%;
+  width: 70% !important;
   margin: 2%;
+  /* border: 2px solid black; */
+}
+
+
+.out-cardsgrid2 {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  margin: 0 auto;
+  /* padding: 10px !impor tant; */
+  justify-content: center;
+  /* border: 2px solid black; */
+  width: 100%;
+  height: max-content !important;
+  
 }
 
 
 
+.cityImage {
+  width: 80% !important;
+  margin:  10px auto !important;
+}
+
+.cityCard {
+  margin: 17px !important;
+  margin-left: 20px !important;
+  text-align: center;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px !important;
+}
+.cityCard:hover {
+  color: #4829f7;
+  cursor: pointer;
+}
 
 
 @media only screen and (max-width: 768px) {

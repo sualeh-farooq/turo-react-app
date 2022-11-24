@@ -58,7 +58,7 @@ export function Slides() {
                 </SwiperSlide>
                 <SwiperSlide>
                   {" "}
-                  <DisplayCards img={Tesla} title="Mercedes-Benz" />{" "}
+                  <DisplayCards img={Mercedes} title="Mercedes-Benz" />{" "}
                 </SwiperSlide>
                 <SwiperSlide>
                   {" "}
