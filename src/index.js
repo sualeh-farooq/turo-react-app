@@ -22,6 +22,9 @@ import { Book } from "./Components/sliders/book";
 import { FAQ } from "./Components/home/faq";
 import { Accord, Accordion } from "./Components/FAQ/faq";
 import { FaqSlide } from "./Components/sliders/questions";
+import { HelloBody } from "./Components/footer/footerdet";
+import { Footer } from "./Components/footer/footer";
+import { SearchBar } from "./Components/home/searchbar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -55,7 +58,6 @@ root.render(
   <br />
   <br />
   <br />
-
   <Book />
   <br />
   <br />
@@ -64,6 +66,10 @@ root.render(
   <br />
   <br />
   <FaqSlide />
+  <br />
+  <br />
+  <HelloBody />
+  <Footer />
     </>
   </React.StrictMode>
 );
