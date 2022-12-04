@@ -11,8 +11,8 @@ export function DisplayCards({img , title}) {
             </Card.Body>
           </Card>
 
-          
+
         
       </>
     );
-  }
+  }     

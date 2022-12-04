@@ -23,29 +23,6 @@
   cursor: pointer;
   font-weight: 500;
 }
-.carousel {
-  background: #EEE;
-}
-
-.carousel-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: carousel-cell;
-}
-
-/* cell number */
-.carousel-cell:before {
-  display: block;
-  text-align: center;
-  content: counter(carousel-cell);
-  line-height: 200px;
-  font-size: 80px;
-  color: white;
-}
-
 
 body {
   padding: 0;
@@ -291,19 +268,19 @@ body {
   display: none !important;
 }
 
-/* .carsCard {
+.carsCard {
   margin: 17px !important;
   margin-left: 20px !important;
   text-align: center;
   color: black;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 10px !important;
-} */
-/* 
+}
+
 .carsCard:hover {
   color: #4829f7;
   cursor: pointer;
-} */
+}
 
 .swiper {
   width: 100%;
@@ -845,7 +822,7 @@ label {
 }
 
 @media only screen and (max-width: 768px) {
-  /* .carsCard {
+  .carsCard {
     width: 50rem !important;
     height: auto !important;
   }
@@ -862,12 +839,12 @@ label {
 
   .carsCard>.card-body {
     width: 100%;
-  } */
+  }
 
-  /* .cartitle {
+  .cartitle {
     font-size: 10px !important;
     color: black !important;
-  } */
+  }
 
   .hostCard {
     width: 10rem;
@@ -979,7 +956,7 @@ label {
 }
 
 @media only screen and (max-width: 465px) {
-  /* .carsCard {
+  .carsCard {
     width: 50rem !important;
     height: auto !important;
   }
@@ -1000,7 +977,7 @@ label {
 
   .cartitle {
     display: none !important;
-  } */
+  }
 
   .outCard {
     display: flex !important;
@@ -1080,27 +1057,27 @@ label {
   .navbar {
     height: auto !important;
   }
-/* 
+
   .carsCard {
     width: 20rem !important;
     height: auto !important;
     /* background-color: red !important; */
-    /* padding: 0% !important; */
-  } */
+    padding: 0% !important;
+  }
 
-  /* .carsCard>h5 {
+  .carsCard>h5 {
     font-size: 5px !important;
     color: wheat !important;
   }
 
   .carsCard>.card-body {
     display: none !important;
-  } */
-/* 
+  }
+
   .cartitle {
     font-size: 10px !important;
     color: white !important;
-  } */
+  }
 
   .cityCard {
     width: 5rem !important;
@@ -1121,7 +1098,7 @@ label {
     margin: 10px;
     flex-wrap: wrap;
   }
-
+}
 
 
 

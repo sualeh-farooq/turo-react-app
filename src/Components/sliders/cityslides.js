@@ -72,19 +72,39 @@ export function CitySlides() {
           <div className="cards">
             <div className="brows">Browse by destination</div>
             <div className="cardsgrid">
-              <Swiper
-                slidesPerView={5}
-                spaceBetween={2}
-                // slidesPerGroup={1}
-                loop={true}
-                loopFillGroupWithBlank={true}
-                pagination={{
-                  clickable: true,
-                }}
-                navigation={true}
-                modules={[Pagination, Navigation]}
-                className="mySwiper"
-              >
+            <Swiper
+        slidesPerView={5}
+        spaceBetween={1}
+        slidesPerGroup={1}
+        loop={true}
+        loopFillGroupWithBlank={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+        breakpoints={{
+          320: {
+            slidesPerView : 3,
+            spaceBetween : 2,
+          },
+          375: {
+            slidesPerView : 3,
+            spaceBetween : 2,
+          },
+          425: {
+            slidesPerView : 4,
+            spaceBetween : 1,
+          },
+          768: {
+            slidesPerView : 5,
+            spaceBetween : 2,
+          }
+        }}
+     
+
+      >
                 <SwiperSlide
                   onMouseOver={(event) => handleOver1(event)}
                   onMouseOut={(event) => handleOut1(event)}

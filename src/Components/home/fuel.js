@@ -11,7 +11,7 @@ export function Dreams() {
             </span>
             <span>
               {" "}
-              <p> Stoke your wanderlust with some dreamy photo chronicles of road trip adventures.</p>
+              <p style={{textAlign: "center"}}> Stoke your wanderlust with some dreamy photo <br />  chronicles of road trip adventures.</p>
             </span>
             <hr className="pink2" />
           </div>
