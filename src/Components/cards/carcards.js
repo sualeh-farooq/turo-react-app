@@ -10,6 +10,8 @@ export function DisplayCards({img , title}) {
               <Card.Title className="cartitle" >{title}</Card.Title>
             </Card.Body>
           </Card>
+
+          
         
       </>
     );

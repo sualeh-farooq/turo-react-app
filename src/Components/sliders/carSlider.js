@@ -14,7 +14,9 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination , Navigation} from "swiper";
+import "swiper/css/free-mode";
+
+import { Pagination , Navigation , FreeMode} from "swiper";
 
 export function Slides() {
   return (
@@ -25,7 +27,7 @@ export function Slides() {
             <div className="cardsgrid">
             <Swiper
         slidesPerView={5}
-        spaceBetween={2}
+        spaceBetween={1}
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
@@ -35,6 +37,26 @@ export function Slides() {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
+        breakpoints={{
+          320: {
+            slidesPerView : 2,
+            spaceBetween : 2,
+          },
+          375: {
+            slidesPerView : 2,
+            spaceBetween : 2,
+          },
+          425: {
+            slidesPerView : 2,
+            spaceBetween : 1,
+          },
+          768: {
+            slidesPerView : 5,
+            spaceBetween : 2,
+          }
+        }}
+     
+
       >
                    <SwiperSlide>
                   {" "}
@@ -58,7 +80,7 @@ export function Slides() {
                 </SwiperSlide>
                 <SwiperSlide>
                   {" "}
-                  <DisplayCards img={Mercedes} title="Mercedes-Benz" />{" "}
+                  <DisplayCards img={Mercedes} title="Mercedes" />{" "}
                 </SwiperSlide>
                 <SwiperSlide>
                   {" "}
