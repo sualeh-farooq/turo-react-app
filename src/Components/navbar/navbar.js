@@ -24,6 +24,9 @@ import {
 } from "firebase/auth";
 import { async } from "@firebase/util";
 import {BiLogOut} from 'react-icons/bi'
+import {Link} from 'react-router-dom'
+import swal from 'sweetalert';
+
 
 window.onload = async () => {
   onAuthStateChanged(auth, async (user) => {
@@ -70,6 +73,7 @@ export function CollapsibleExample() {
         regPassword
       );
       console.log("User Registred Succesfully");
+      swal("Registered", "Account Registered Sucesfully", "success");
     } catch (error) {
       console.log(error);
     }
@@ -277,7 +281,7 @@ export function CollapsibleExample() {
               {/***********************************************************************************************************/}
 
               <NavDropdown.Item id="profile_icon">
-                <VscAccount style={{ fontSize: "large" }} /> Profile
+                <VscAccount style={{ fontSize: "large"}} /> <Link style={{textDecoration : 'none', color:'black'}} to='/profile'>Profile</Link>
               </NavDropdown.Item>
               <NavDropdown.Item id="account_icon">
                 <BsFillPersonFill style={{ fontSize: "large" }} /> Account

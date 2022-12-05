@@ -14,6 +14,8 @@ onAuthStateChanged(auth, async (user) => {
     document.getElementById('cus-name').innerText = user.email
   } else {
     console.log("Not Available");
+    document.getElementById('cus-name').innerText = 'User Not Login'
+
   }
 })
 
