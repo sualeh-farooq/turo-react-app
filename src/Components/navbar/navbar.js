@@ -6,22 +6,76 @@ import Button from "react-bootstrap/Button";
 import logo from "../../assets/logo.svg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillCar } from "react-icons/ai";
+import { VscAccount } from "react-icons/vsc";
+import { MdAccountCircle } from "react-icons/md";
 import { GiHouseKeys } from "react-icons/gi";
 import { BiSupport } from "react-icons/bi";
-import { BsShieldCheck } from "react-icons/bs";
+import { BsShieldCheck, BsFillPersonFill } from "react-icons/bs";
 import Modal from "react-bootstrap/Modal";
 import { BsApple } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { SiFacebook } from "react-icons/si";
 import React, { useState } from "react";
+import { auth } from "../../firebase/config";
+import {
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 
-import "../../App.css";
+const profile_icon = document.getElementById("profile_icon");
+const account_icon = document.getElementById("account_icon");
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    console.log(`User is currently Login`);
+    profile_icon.innerHTML = ""
+    account_icon.innerHTML = ""
+
+  } else {
+    console.log("Not Available");
+ 
+  }
+});
 export function CollapsibleExample() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [signupShow, setSignupShow] = useState(false);
+  const signupHandleClose = () => setSignupShow(false);
+  const signupHandleShow = () => setSignupShow(true);
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [regName, setRegName] = useState("");
+  const [regEmail, setRegEmail] = useState("");
+  const [regPassword, setRegPassword] = useState("");
+
+  const login = async () => {
+    try {
+      const user = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      console.log(user);
+    } catch (error) {
+      console.log("error message" + error);
+    }
+  };
+
+  const signup = async () => {
+    try {
+      const user = await createUserWithEmailAndPassword(
+        auth,
+        regEmail,
+        regPassword
+      );
+      console.log("User Registred Succesfully");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Navbar className="navbar" collapseOnSelect expand="lg">
@@ -31,7 +85,7 @@ export function CollapsibleExample() {
           <Nav className="navright">
             <NavDropdown title={<GiHamburgerMenu />}>
               <NavDropdown.Item onClick={handleShow}>Login</NavDropdown.Item>
-              {/* Modal Starts Here*/}
+              {/* Login Modal Starts Here*/}
               <Modal className="modal" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                   <Modal.Title className="modalTitle">Welcome back</Modal.Title>
@@ -43,7 +97,14 @@ export function CollapsibleExample() {
                         <div class="col">
                           <label>Email</label>
                           <br />
-                          <input className="input" id="name" type="text" />
+                          <input
+                            className="input"
+                            id="email"
+                            type="text"
+                            onChange={(event) => {
+                              setLoginEmail(event.target.value);
+                            }}
+                          />
                         </div>
                         <div class="col">
                           <label>Password</label>{" "}
@@ -57,13 +118,23 @@ export function CollapsibleExample() {
                           <br />
                           <input
                             className="input"
-                            id="father"
+                            id="password"
                             placeholder="Password"
                             type="password"
+                            onChange={(event) => {
+                              setLoginPassword(event.target.value);
+                            }}
                           />
                         </div>
                       </div>
-                      <Button className="loginBtn"> Login</Button>
+                      <Button
+                        id="loginBtn"
+                        onClick={login}
+                        className="loginBtn"
+                      >
+                        {" "}
+                        Login
+                      </Button>
                     </form>
                   </div>
                   <div className="google">
@@ -84,7 +155,7 @@ export function CollapsibleExample() {
                       <br />
                       <div className="accna">
                         Don't Have an Account ?{" "}
-                        <Button className="signupBtn">Sign up</Button>{" "}
+                        <Button className="signupBtn">Sign Up</Button>{" "}
                       </div>
                     </div>
                     <div className="captcha">
@@ -98,27 +169,149 @@ export function CollapsibleExample() {
                   </div>
                 </Modal.Body>
               </Modal>
-              {/* Modal Ends here*/}
-              <NavDropdown.Item href="#action/3.2">Signup</NavDropdown.Item>
+              {/* Login Modal Ends here*/}
+
+              {/***********************************************************************************************************/}
+
+              <NavDropdown.Item onClick={signupHandleShow}>
+                Signup
+              </NavDropdown.Item>
+
+              <Modal
+                className="modal"
+                show={signupShow}
+                onHide={signupHandleClose}
+              >
+                <Modal.Header closeButton>
+                  ``
+                  <Modal.Title className="modalTitle">
+                    Welcome to Turo
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="modalBody">
+                  <div className="email">
+                    <form id="form" className="form">
+                      <div class="row-check">
+                        <div class="col">
+                          <label>Full Name</label>
+                          <br />
+                          <input
+                            className="input"
+                            id="email"
+                            type="text"
+                            onChange={(event) => {
+                              setRegName(event.target.value);
+                            }}
+                          />
+                        </div>
+                        <small style={{ fontSize: "small" }}>
+                          Enter your name as it appears to driving license
+                        </small>
+                        <div class="col">
+                          <label>Email</label>
+                          <br />
+                          <input
+                            className="input"
+                            id="email"
+                            type="text"
+                            onChange={(event) => {
+                              setRegEmail(event.target.value);
+                            }}
+                          />
+                        </div>
+                        <div class="col">
+                          <label>Password</label> <br />
+                          <input
+                            className="input"
+                            id="password"
+                            placeholder="Password"
+                            type="password"
+                            onChange={(event) => {
+                              setRegPassword(event.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <Button
+                        id="loginBtn"
+                        className="loginBtn"
+                        onClick={signup}
+                      >
+                        {" "}
+                        Sign Up
+                      </Button>
+                    </form>
+                  </div>
+                  <div className="google">
+                    <p>or</p>
+                    <div className="socialBtns">
+                      <Button className="appleBtn">
+                        {" "}
+                        <BsApple className="icon" /> Continue with Apple{" "}
+                      </Button>
+                      <Button className="googleBtn">
+                        {" "}
+                        <FcGoogle className="icon" /> Continue with Google
+                      </Button>
+                      <Button className="facebookBtn">
+                        {" "}
+                        <SiFacebook className="icon" /> Continue with Facebook
+                      </Button>{" "}
+                      <br />
+                      <div className="accna">
+                        Already have an Account ?{" "}
+                        <Button className="signupBtn">Login</Button>{" "}
+                      </div>
+                    </div>
+                    <div className="captcha">
+                      This site is protected by reCAPTCHA and the Google{" "}
+                      <span className="captchaPurple">Privacy Policy</span>
+                      <br /> and{" "}
+                      <span className="captchaPurple">
+                        Terms of Service apply.
+                      </span>
+                    </div>
+                  </div>
+                </Modal.Body>
+              </Modal>
+
+              {/* Signup Modal Ends Here */}
+              {/***********************************************************************************************************/}
+
+              <NavDropdown.Item id="profile_icon">
+                <VscAccount style={{ fontSize: "large" }} /> Profile
+              </NavDropdown.Item>
+              <NavDropdown.Item id="account_icon">
+                <BsFillPersonFill style={{ fontSize: "large" }} /> Account
+              </NavDropdown.Item>
+
               <NavDropdown.Item>
                 {" "}
-                <AiFillCar /> Become a host
+                <AiFillCar style={{ fontSize: "large" }} /> Become a host
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 {" "}
-                <GiHouseKeys /> How turo works
+                <GiHouseKeys style={{ fontSize: "large" }} /> How turo works
               </NavDropdown.Item>
               <NavDropdown.Item>
                 {" "}
-                <BiSupport /> Contact Support
+                <BiSupport style={{ fontSize: "large" }} /> Contact Support
               </NavDropdown.Item>
               <NavDropdown.Item>
                 {" "}
-                <BsShieldCheck /> Insurance & Protection
+                <BsShieldCheck style={{ fontSize: "large" }} /> Insurance &
+                Protection
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item>
+                {" "}
+                <BsShieldCheck style={{ fontSize: "large" }} /> log Out
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+          {/* Navbar Dropdown eNDS */}
+
           <Button className="hostBtn" variant="light">
             Become a host
           </Button>

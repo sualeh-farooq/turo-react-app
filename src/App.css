@@ -686,7 +686,7 @@ body {
   /* border: 2px solid black !important; */
   margin: 0 auto !important;
   font-size: xx-large !important;
-  margin-left: 30% !important;
+  margin-left: 25% !important;
   font-family: 'Times New Roman', Times, serif;
   font-weight: 700 !important;
 }
@@ -812,6 +812,16 @@ label {
 .captchaPurple {
   color: #593cfb;
 }
+.login_icon_show {
+  display: block;
+}
+.login_icon_none {
+  display: none;
+}
+
+
+
+
 @media only screen and (max-width: 1024px) {
   .search {
     background-color: rgb(255, 255, 255);

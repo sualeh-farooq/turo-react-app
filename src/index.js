@@ -27,6 +27,8 @@ import { Footer } from "./Components/footer/footer";
 import { SearchBar } from "./Components/home/searchbar";
 import { LoginModal } from "./Components/home/modal";
 
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
