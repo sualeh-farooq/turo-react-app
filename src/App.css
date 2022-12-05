@@ -820,8 +820,39 @@ label {
 }
 
 
+.profile-bg{
+  display: flex;
+  /* border: 2px solid black; */
+  justify-content: space-around;
+  /* background-color: red; */
+  flex-wrap: wrap;
+}
 
+.profile-data {
+  /* background-color: yellow; */
+  flex: 1;
+}
+.profile-review{
+  flex: 1;
+  /* background-color: rgb(0, 234, 255); */
+}
 
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+}
+
+.data-small {
+  display: flex;
+  justify-content: space-between;
+}
+.profile-host{
+  display: flex;
+  background-color: red;
+  justify-content: space-between;
+  width: max-content;
+}
 @media only screen and (max-width: 1024px) {
   .search {
     background-color: rgb(255, 255, 255);

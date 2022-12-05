@@ -23,22 +23,18 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { async } from "@firebase/util";
+import {BiLogOut} from 'react-icons/bi'
 
-const profile_icon = document.getElementById("profile_icon");
-const account_icon = document.getElementById("account_icon");
-
-window.onload = async () =>{
-  await onAuthStateChanged(auth, async (user) => {
+window.onload = async () => {
+  onAuthStateChanged(auth, async (user) => {
     if (user) {
       const uid = user.uid;
       console.log(`User is currently Login`);
-      profile_icon.innerHTML = ""
-      account_icon.innerHTML = ""  
     } else {
       console.log("Not Available");
     }
   });
-}
+};
 
 export function CollapsibleExample() {
   const [show, setShow] = useState(false);
@@ -309,7 +305,7 @@ export function CollapsibleExample() {
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 {" "}
-                <BsShieldCheck style={{ fontSize: "large" }} /> log Out
+                <BiLogOut style={{ fontSize: "large" }} /> log Out
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
