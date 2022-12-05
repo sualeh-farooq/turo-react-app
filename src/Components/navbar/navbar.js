@@ -22,24 +22,24 @@ import {
   onAuthStateChanged,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+import { async } from "@firebase/util";
 
 const profile_icon = document.getElementById("profile_icon");
 const account_icon = document.getElementById("account_icon");
 
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    const uid = user.uid;
-    console.log(`User is currently Login`);
-    profile_icon.innerHTML = ""
-    account_icon.innerHTML = ""
+window.onload = async () =>{
+  await onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      const uid = user.uid;
+      console.log(`User is currently Login`);
+      profile_icon.innerHTML = ""
+      account_icon.innerHTML = ""  
+    } else {
+      console.log("Not Available");
+    }
+  });
+}
 
-
-  } else {
-    console.log("Not Available");
-    
- 
-  }
-});
 export function CollapsibleExample() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
