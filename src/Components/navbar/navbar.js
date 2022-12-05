@@ -30,11 +30,11 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
     console.log(`User is currently Login`);
-    profile_icon.innerHTML = ""
-    account_icon.innerHTML = ""
 
   } else {
     console.log("Not Available");
+    profile_icon.innerHTML = ""
+    account_icon.innerHTML = ""
  
   }
 });
