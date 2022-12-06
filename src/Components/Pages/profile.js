@@ -12,13 +12,6 @@ export function Profile() {
     <CollapsibleExample />
     <ProfileBanner />
    <Data />
-   <br />
-   <br />
-   <br />
-   <br />
-   <br />
-   <br />
-
     <Footer />
     </>
 }

@@ -11,10 +11,10 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     const uid = user.uid;
     console.log(user.email);
-    document.getElementById('cus-name').innerText = user.email
+    // document.getElementById('cus-name').innerText = user.email
   } else {
     console.log("Not Available");
-    document.getElementById('cus-name').innerText = 'User Not Login'
+    // document.getElementById('cus-name').innerText = 'User Not Login'
 
   }
 })

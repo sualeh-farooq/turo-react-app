@@ -21,11 +21,21 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  getAuth,
+  FacebookAuthProvider
 } from "firebase/auth";
 import { async } from "@firebase/util";
 import {BiLogOut} from 'react-icons/bi'
 import {Link} from 'react-router-dom'
 import swal from 'sweetalert';
+
+
+const google_provider = new GoogleAuthProvider();
+const facebook_provider = new FacebookAuthProvider();
+
 
 
 window.onload = async () => {
@@ -52,6 +62,7 @@ export function CollapsibleExample() {
   const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
 
+
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(
@@ -77,7 +88,50 @@ export function CollapsibleExample() {
     } catch (error) {
       console.log(error);
     }
+
   };
+
+const auth = getAuth();
+
+const facebookLogin = async () => {
+  signInWithPopup(auth, facebook_provider)
+  .then((result) => {
+    const user = result.user;
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const accessToken = credential.accessToken;
+    console.log(user)
+
+    // ...
+  })
+  .catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = FacebookAuthProvider.credentialFromError(error);
+
+    console.log(errorMessage)
+
+    // ...
+  });
+}
+  const loginwithGoogle= async () =>{
+    await signInWithPopup(auth, google_provider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        console.log(user)
+        // ...
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+      });
+  }
 
   return (
     <Navbar className="navbar" collapseOnSelect expand="lg">
@@ -251,13 +305,13 @@ export function CollapsibleExample() {
                         {" "}
                         <BsApple className="icon" /> Continue with Apple{" "}
                       </Button>
-                      <Button className="googleBtn">
+                      <Button onClick={loginwithGoogle} className="googleBtn">
                         {" "}
                         <FcGoogle className="icon" /> Continue with Google
                       </Button>
-                      <Button className="facebookBtn">
+                      <Button onClick={facebookLogin} className="facebookBtn">
                         {" "}
-                        <SiFacebook className="icon" /> Continue with Facebook
+                        <SiFacebook  className="icon" /> Continue with Facebook
                       </Button>{" "}
                       <br />
                       <div className="accna">
