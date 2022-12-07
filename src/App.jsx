@@ -21,6 +21,7 @@ import { SearchBar } from "./Components/home/searchbar";
 import { LoginModal } from "./Components/home/modal";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import { Profile } from "./Components/Pages/profile";
+import { NotFound } from "./Components/home/404";
 
 export function App() {
   return (
@@ -29,6 +30,8 @@ export function App() {
         <Routes>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/" element={<HomeView />}></Route>
+          <Route path="/home" element={<HomeView />}></Route>
+          <Route path="/*" element={<NotFound />} ></Route>
         </Routes>
       </BrowserRouter>
     </>

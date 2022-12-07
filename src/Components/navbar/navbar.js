@@ -25,20 +25,19 @@ import {
   signInWithPopup,
   signInWithRedirect,
   getAuth,
-  FacebookAuthProvider
+  FacebookAuthProvider,
+  signOut,
 } from "firebase/auth";
 import { async } from "@firebase/util";
-import {BiLogOut} from 'react-icons/bi'
-import {Link} from 'react-router-dom'
-import swal from 'sweetalert';
-
+import { BiLogOut } from "react-icons/bi";
+import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 const google_provider = new GoogleAuthProvider();
 const facebook_provider = new FacebookAuthProvider();
 
 
-
-window.onload = async () => {
+//Checking User Auth
   onAuthStateChanged(auth, async (user) => {
     if (user) {
       const uid = user.uid;
@@ -47,7 +46,7 @@ window.onload = async () => {
       console.log("Not Available");
     }
   });
-};
+
 
 export function CollapsibleExample() {
   const [show, setShow] = useState(false);
@@ -62,7 +61,18 @@ export function CollapsibleExample() {
   const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
 
+  //Logout Function
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        swal("Sign Out Sucessfully", "Sign Out", "info");
+      })
+      .catch((error) => {
+        console.log(`error==> ${error}`);
+      });
+  };
 
+  //Custom Login
   const login = async () => {
     try {
       const user = await signInWithEmailAndPassword(
@@ -71,11 +81,13 @@ export function CollapsibleExample() {
         loginPassword
       );
       console.log(user);
+      swal("Login Sucessfully", "", "sucess");
     } catch (error) {
       console.log("error message" + error);
     }
   };
 
+  //Custom Signup
   const signup = async () => {
     try {
       const user = await createUserWithEmailAndPassword(
@@ -88,52 +100,67 @@ export function CollapsibleExample() {
     } catch (error) {
       console.log(error);
     }
-
   };
 
-const auth = getAuth();
+  const auth = getAuth();
 
-const facebookLogin = async () => {
-  signInWithPopup(auth, facebook_provider)
-  .then((result) => {
-    const user = result.user;
-    const credential = FacebookAuthProvider.credentialFromResult(result);
-    const accessToken = credential.accessToken;
-    console.log(user)
+  //Facebook Login
+  const facebookLogin = async () => {
+    signInWithPopup(auth, facebook_provider)
+      .then((result) => {
+        const user = result.user;
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+        swal(
+          "Connected with Facebook",
+          "Account Registered Sucesfully",
+          "success"
+        );
+        console.log(user);
 
-    // ...
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = FacebookAuthProvider.credentialFromError(error);
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
 
-    console.log(errorMessage)
+        console.log(errorMessage);
 
-    // ...
-  });
-}
-  const loginwithGoogle= async () =>{
+        // ...
+      });
+  };
+
+  //Google Login
+  const loginwithGoogle = async () => {
     await signInWithPopup(auth, google_provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        console.log(user)
+        console.log(user);
+        swal(
+          "Connected with Google",
+          "Account Registered Sucesfully",
+          "success"
+        );
+
         // ...
-      }).catch((error) => {
+      })
+      .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         const email = error.customData.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
-  }
+  };
 
   return (
+
     <Navbar className="navbar" collapseOnSelect expand="lg">
       <Container className="navbar-con">
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -200,11 +227,11 @@ const facebookLogin = async () => {
                         {" "}
                         <BsApple className="icon" /> Continue with Apple{" "}
                       </Button>
-                      <Button className="googleBtn">
+                      <Button onClick={loginwithGoogle} className="googleBtn">
                         {" "}
                         <FcGoogle className="icon" /> Continue with Google
                       </Button>
-                      <Button className="facebookBtn">
+                      <Button onClick={facebookLogin} className="facebookBtn">
                         {" "}
                         <SiFacebook className="icon" /> Continue with Facebook
                       </Button>{" "}
@@ -311,7 +338,7 @@ const facebookLogin = async () => {
                       </Button>
                       <Button onClick={facebookLogin} className="facebookBtn">
                         {" "}
-                        <SiFacebook  className="icon" /> Continue with Facebook
+                        <SiFacebook className="icon" /> Continue with Facebook
                       </Button>{" "}
                       <br />
                       <div className="accna">
@@ -335,7 +362,13 @@ const facebookLogin = async () => {
               {/***********************************************************************************************************/}
 
               <NavDropdown.Item id="profile_icon">
-                <VscAccount style={{ fontSize: "large"}} /> <Link style={{textDecoration : 'none', color:'black'}} to='/profile'>Profile</Link>
+                <VscAccount style={{ fontSize: "large" }} />{" "}
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/profile"
+                >
+                  Profile
+                </Link>
               </NavDropdown.Item>
               <NavDropdown.Item id="account_icon">
                 <BsFillPersonFill style={{ fontSize: "large" }} /> Account
@@ -361,7 +394,7 @@ const facebookLogin = async () => {
                 Protection
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item>
+              <NavDropdown.Item onClick={logout}>
                 {" "}
                 <BiLogOut style={{ fontSize: "large" }} /> log Out
               </NavDropdown.Item>
